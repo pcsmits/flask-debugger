@@ -2,7 +2,7 @@ from flask import Flask
 import os
 
 from status import status
-from static import static
+from s3 import s3
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ app.config['pg_host'] = os.environ.get("PGHOST")
 app.config['pg_pass'] = os.environ.get("PGPASSWORD")
 
 app.register_blueprint(status)
-app.register_blueprint(static)
+app.register_blueprint(s3)
 
 @app.route('/health')
 def health():

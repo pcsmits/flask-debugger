@@ -2,3 +2,4 @@ Flask
 waitress
 requests
 psycopg2
+boto3
