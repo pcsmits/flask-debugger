@@ -3,6 +3,7 @@ import os
 
 from status import status
 from s3 import s3
+from listdir import listdir
 
 app = Flask(__name__)
 
@@ -13,6 +14,7 @@ app.config['pg_pass'] = os.environ.get("PGPASSWORD")
 
 app.register_blueprint(status)
 app.register_blueprint(s3)
+app.register_blueprint(listdir)
 
 @app.route('/health')
 def health():
